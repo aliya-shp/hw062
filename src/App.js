@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Route, Switch, BrowserRouter, NavLink} from 'react-router-dom';
+
+import Cappadocia from "./containers/Cappadocia/Cappadocia";
+import Istanbul from "./containers/Istanbul/Istanbul";
+import Izmir from "./containers/Izmir/Izmir";
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header>
+                <h2>Turkey's views</h2>
+            </header>
+            <main>
+                <BrowserRouter>
+                    <NavLink to="/" exact> Cappadocia </NavLink>
+                    <NavLink to="/Istanbul" exact> Istanbul </NavLink>
+                    <NavLink to="/Izmir" exact> Izmir </NavLink>
+                    <Route path="/" exact component={Cappadocia}/>
+                    <Route path="/Istanbul" component={Istanbul}/>
+                    <Route path="/Izmir" component={Izmir}/>
+                    <Route render={() => <h1>Not found</h1>} />
+                </BrowserRouter>
+            </main>
+        </div>
+    );
 }
 
 export default App;
