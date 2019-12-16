@@ -3,3 +3,8 @@ img {
     height: 200px;
     overflow: hidden;
 }
+.Description {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}

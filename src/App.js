@@ -15,13 +15,15 @@ function App() {
             </header>
             <main>
                 <BrowserRouter>
-                    <NavLink to="/" exact> Cappadocia </NavLink>
-                    <NavLink to="/Istanbul" exact> Istanbul </NavLink>
-                    <NavLink to="/Izmir" exact> Izmir </NavLink>
-                    <Route path="/" exact component={Cappadocia}/>
-                    <Route path="/Istanbul" component={Istanbul}/>
-                    <Route path="/Izmir" component={Izmir}/>
-                    <Route render={() => <h1>Not found</h1>} />
+                    <NavLink to="/" exact className="NavButton"> Cappadocia </NavLink>
+                    <NavLink to="/Istanbul" className="NavButton"> Istanbul </NavLink>
+                    <NavLink to="/Izmir" className="NavButton"> Izmir </NavLink>
+                    <Switch>
+                        <Route path="/" exact component={Cappadocia}/>
+                        <Route path="/Istanbul" component={Istanbul}/>
+                        <Route path="/Izmir" component={Izmir}/>
+                        <Route render={() => <h1>Not found</h1>} />
+                    </Switch>
                 </BrowserRouter>
             </main>
         </div>
